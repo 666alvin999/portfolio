@@ -1,3 +1,25 @@
 @import "tailwindcss";
 
+@theme {
+    --color-primary: #5f05fa;
+}
+
+@layer base {
+    * {
+        @apply m-0 p-0 box-border;
+    }
+
+    body {
+        @apply w-screen h-screen bg-black;
+    }
+}
+
+@layer utilities {
+    .glassy {
+        background: rgba(122, 122, 122, 0.4);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border-radius: 10px;
+    }
+}
 

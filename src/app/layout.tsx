@@ -1,7 +1,10 @@
-import type { Metadata } from "next";
 import { ReactNode } from "react";
+import type { Metadata } from "next";
+
+import { Header } from "@/block";
 
 import "./globals.css";
+import "@/block/Header/Header.css";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -11,7 +14,10 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
 	return (
 		<html lang="fr">
-			<body>{children}</body>
+			<body>
+				<Header />
+				{children}
+			</body>
 		</html>
 	);
 };
