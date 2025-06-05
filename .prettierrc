@@ -6,7 +6,7 @@
     "tabWidth": 4,
     "trailingComma": "none",
     "bracketSpacing": true,
-    "bracketSameLine": true,
+    "bracketSameLine": false,
     "jsxSingleQuote": false,
     "htmlWhitespaceSensitivity": "strict",
     "printWidth": 120,
