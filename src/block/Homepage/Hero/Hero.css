@@ -1,0 +1,36 @@
+@reference "../../../app/globals.css";
+
+.hero-container {
+    @apply w-screen h-screen relative z-0;
+
+    & > .hero-background {
+        @apply bg-black w-screen h-screen flex justify-center items-center absolute z-0;
+        mask-image: url("/homepage-hero-mask.png");
+        mask-mode: luminance;
+        mask-size: cover;
+
+        & > .custom-cursor {
+            @apply invisible bg-[#5624de] w-9 aspect-square flex justify-center items-center absolute left-0 top-0 -z-10 rounded-full;
+
+            -webkit-box-shadow: 0 0 164px 120px #5F16FF;
+            -moz-box-shadow: 0 0 164px 120px #5F16FF;
+            box-shadow: 0 0 164px 120px #5F16FF;
+        }
+    }
+
+    & > .hero-content {
+        @apply w-screen h-screen flex flex-col justify-center items-center absolute z-10;
+
+        & > h1, h2 {
+            @apply text-white;
+        }
+
+        & > h1 {
+            @apply text-8xl font-bold;
+        }
+
+        & > h2 {
+            @apply text-4xl;
+        }
+    }
+}
