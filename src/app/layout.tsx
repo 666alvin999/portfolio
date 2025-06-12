@@ -1,10 +1,13 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
+import { Source_Sans_3 } from "next/font/google";
 
 import { Header } from "@/block";
 
 import "./globals.css";
 import "@/block/Header/Header.css";
+
+const sourceSans = Source_Sans_3({ weight: ["300", "400", "500", "600", "700", "800", "900"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -14,7 +17,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
 	return (
 		<html lang="fr">
-			<body>
+			<body className={sourceSans.className}>
 				<Header />
 				{children}
 			</body>

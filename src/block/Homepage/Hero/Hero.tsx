@@ -1,21 +1,47 @@
 "use client";
 
 import React, { MouseEventHandler, useRef } from "react";
+import { Bebas_Neue } from "next/font/google";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { SplitText } from "gsap/SplitText";
 
 import "./Hero.css";
 
+gsap.registerPlugin(SplitText);
+
+const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"] });
+
 const Hero = () => {
 	const heroRef = useRef<HTMLDivElement>(null);
+	const heroContentRef = useRef<HTMLDivElement>(null);
 	const customCursorRef = useRef<HTMLDivElement>(null);
 
 	const { contextSafe } = useGSAP(
 		() => {
+			gsap.set(".hero-content", {
+				autoAlpha: 1
+			});
+
 			gsap.set(customCursorRef.current, {
 				autoAlpha: 1,
 				x: -500,
 				y: -500
+			});
+
+			SplitText.create(".hero-content > h1, h2", {
+				type: "chars",
+				onSplit: (self) => {
+					gsap.from(self.chars, {
+						autoAlpha: 0,
+						y: "random([-20, 20])",
+						delay: 0.3,
+						stagger: {
+							amount: 0.8,
+							from: "random"
+						}
+					});
+				}
 			});
 		},
 		{
@@ -57,8 +83,8 @@ const Hero = () => {
 				<div ref={customCursorRef} className="custom-cursor"></div>
 			</div>
 
-			<div className="hero-content">
-				<h1>Alvin Hamaïde</h1>
+			<div className="hero-content" ref={heroContentRef}>
+				<h1 className={bebasNeue.className}>Alvin Hamaïde</h1>
 				<h2>Développeur Web Fullstack Junior</h2>
 			</div>
 		</div>
