@@ -4,6 +4,7 @@ const Home = () => {
 	return (
 		<main>
 			<Hero />
+			<div className="h-screen w-screen"></div>
 		</main>
 	);
 };

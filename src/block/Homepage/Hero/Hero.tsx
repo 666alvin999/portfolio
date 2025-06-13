@@ -4,17 +4,17 @@ import React, { MouseEventHandler, useRef } from "react";
 import { Bebas_Neue } from "next/font/google";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 
 import "./Hero.css";
 
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 
 const Hero = () => {
 	const heroRef = useRef<HTMLDivElement>(null);
-	const heroContentRef = useRef<HTMLDivElement>(null);
 	const customCursorRef = useRef<HTMLDivElement>(null);
 
 	const { contextSafe } = useGSAP(
@@ -41,6 +41,38 @@ const Hero = () => {
 							from: "random"
 						}
 					});
+
+					gsap.timeline({
+						scrollTrigger: {
+							trigger: heroRef.current,
+							start: "top top",
+							end: "bottom 75%",
+							scrub: 1
+						}
+					})
+						.fromTo(
+							self.chars,
+							{
+								x: 0,
+								y: 0,
+								scale: 1,
+								rotation: 0
+							},
+							{
+								x: "random(-400, 400)",
+								y: "random(-400, 400)",
+								scale: 3,
+								rotation: "random(-50, 50)"
+							}
+						)
+						.to(
+							self.chars,
+							{
+								autoAlpha: 0,
+								duration: 0.2
+							},
+							">-0.5"
+						);
 				}
 			});
 		},
@@ -83,7 +115,7 @@ const Hero = () => {
 				<div ref={customCursorRef} className="custom-cursor"></div>
 			</div>
 
-			<div className="hero-content" ref={heroContentRef}>
+			<div className="hero-content">
 				<h1 className={bebasNeue.className}>Alvin Hamaïde</h1>
 				<h2>Développeur Web Fullstack Junior</h2>
 			</div>
