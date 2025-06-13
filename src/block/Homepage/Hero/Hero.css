@@ -10,11 +10,11 @@
         mask-size: cover;
 
         & > .custom-cursor {
-            @apply invisible bg-[#5624de] w-9 aspect-square flex justify-center items-center absolute left-0 top-0 -z-10 rounded-full;
+            @apply invisible w-4xl h-[2400px] absolute -z-10;
 
-            -webkit-box-shadow: 0 0 164px 120px #5F16FF;
-            -moz-box-shadow: 0 0 164px 120px #5F16FF;
-            box-shadow: 0 0 164px 120px #5F16FF;
+            transform: rotate(30deg);
+
+            background: linear-gradient(90deg, black 0%, var(--color-primary) 30%, var(--color-primary) 50%, black 80%);
         }
     }
 

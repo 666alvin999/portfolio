@@ -1,6 +1,6 @@
 "use client";
 
-import React, { MouseEventHandler, useRef } from "react";
+import React, { useRef } from "react";
 import { Bebas_Neue } from "next/font/google";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
@@ -17,7 +17,7 @@ const Hero = () => {
 	const heroRef = useRef<HTMLDivElement>(null);
 	const customCursorRef = useRef<HTMLDivElement>(null);
 
-	const { contextSafe } = useGSAP(
+	useGSAP(
 		() => {
 			gsap.set(".hero-content", {
 				autoAlpha: 1
@@ -25,8 +25,16 @@ const Hero = () => {
 
 			gsap.set(customCursorRef.current, {
 				autoAlpha: 1,
-				x: -500,
-				y: -500
+				x: -1500
+			});
+
+			gsap.to(customCursorRef.current, {
+				x: window.innerWidth + 200,
+				repeat: -1,
+				yoyo: true,
+				delay: 0.3,
+				duration: 6,
+				ease: "none"
 			});
 
 			SplitText.create(".hero-content > h1, h2", {
@@ -81,36 +89,8 @@ const Hero = () => {
 		}
 	);
 
-	const handleMouseEnter = contextSafe(() => {
-		gsap.to(customCursorRef.current, {
-			autoAlpha: 1,
-			duration: 0.2
-		});
-	});
-
-	const handleMouseMove: MouseEventHandler<HTMLDivElement> = contextSafe((e: React.MouseEvent<HTMLDivElement>) => {
-		gsap.to(customCursorRef.current, {
-			x: e.clientX - customCursorRef.current!.clientWidth / 2,
-			y: e.clientY - customCursorRef.current!.clientHeight / 2,
-			duration: 0.4
-		});
-	});
-
-	const handleMouseLeave = contextSafe(() => {
-		gsap.to(customCursorRef.current, {
-			autoAlpha: 0,
-			duration: 0.2
-		});
-	});
-
 	return (
-		<div
-			className="hero-container"
-			ref={heroRef}
-			onMouseEnter={handleMouseEnter}
-			onMouseMove={handleMouseMove}
-			onMouseLeave={handleMouseLeave}
-		>
+		<div className="hero-container" ref={heroRef}>
 			<div className="hero-background">
 				<div ref={customCursorRef} className="custom-cursor"></div>
 			</div>
