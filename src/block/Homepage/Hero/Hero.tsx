@@ -1,21 +1,22 @@
 "use client";
 
-import React, { useRef } from "react";
-import { Bebas_Neue } from "next/font/google";
+import React, { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
+import { gsap, ScrollTrigger, SplitText } from "gsap/all";
+
+import { bebasNeue } from "@/lib/fonts";
 
 import "./Hero.css";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
-const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"] });
-
 const Hero = () => {
 	const heroRef = useRef<HTMLDivElement>(null);
 	const customCursorRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	useGSAP(
 		() => {
@@ -47,40 +48,41 @@ const Hero = () => {
 						stagger: {
 							amount: 0.8,
 							from: "random"
+						},
+						onComplete: () => {
+							gsap.timeline({
+								scrollTrigger: {
+									trigger: heroRef.current,
+									start: "top top",
+									end: "bottom 75%",
+									scrub: 1
+								}
+							})
+								.fromTo(
+									self.chars,
+									{
+										x: 0,
+										y: 0,
+										scale: 1,
+										rotation: 0
+									},
+									{
+										x: "random(-400, 400)",
+										y: "random(-400, 400)",
+										scale: 3,
+										rotation: "random(-50, 50)"
+									}
+								)
+								.to(
+									self.chars,
+									{
+										autoAlpha: 0,
+										duration: 0.2
+									},
+									">-0.5"
+								);
 						}
 					});
-
-					gsap.timeline({
-						scrollTrigger: {
-							trigger: heroRef.current,
-							start: "top top",
-							end: "bottom 75%",
-							scrub: 1
-						}
-					})
-						.fromTo(
-							self.chars,
-							{
-								x: 0,
-								y: 0,
-								scale: 1,
-								rotation: 0
-							},
-							{
-								x: "random(-400, 400)",
-								y: "random(-400, 400)",
-								scale: 3,
-								rotation: "random(-50, 50)"
-							}
-						)
-						.to(
-							self.chars,
-							{
-								autoAlpha: 0,
-								duration: 0.2
-							},
-							">-0.5"
-						);
 				}
 			});
 		},
@@ -97,7 +99,7 @@ const Hero = () => {
 
 			<div className="hero-content">
 				<h1 className={bebasNeue.className}>Alvin Hamaïde</h1>
-				<h2>Développeur Web Fullstack Junior</h2>
+				<h2>Développeur Java / NextJS Junior</h2>
 			</div>
 		</div>
 	);
