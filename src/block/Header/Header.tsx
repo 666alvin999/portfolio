@@ -5,6 +5,8 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 
+import "./Header.css";
+
 gsap.registerPlugin(CustomEase);
 CustomEase.create("custom", "M0,0 C0.147,0 0.456,0.091 0.497,0.62 0.509,0.778 0.639,1 1,1 ");
 
@@ -36,9 +38,12 @@ const Header = () => {
 						autoAlpha: 1,
 						y: 0,
 						duration: 0.8,
-						stagger: 0.1
+						stagger: {
+							each: 0.1,
+							from: "center"
+						}
 					},
-					"+=0.4"
+					">-0.5"
 				);
 		},
 		{
