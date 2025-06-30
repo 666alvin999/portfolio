@@ -7,6 +7,12 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
+        "lint:fix": "next lint --fix",
+        "format": "prettier --write .",
+        "quality:check": "npm run lint && npm run ts && npm run format -- --check",
+        "ts": "tsc --noEmit",
+        "quality:fix": "npm run lint:fix && npm run format",
+        "postinstall": "husky install",
         "commit": "cz"
     },
     "dependencies": {
@@ -32,6 +38,7 @@
         "eslint-config-next": "15.3.1",
         "eslint-config-prettier": "^10.1.2",
         "eslint-plugin-simple-import-sort": "^12.1.1",
+        "husky": "^9.1.7",
         "postcss-nesting": "^13.0.1",
         "prettier": "3.5.3",
         "prettier-plugin-import-sort": "^0.0.7",
