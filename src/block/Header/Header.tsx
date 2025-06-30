@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
@@ -56,10 +57,18 @@ const Header = () => {
 			<div className="glassy header">
 				<nav>
 					<ul>
-						<li>Accueil</li>
-						<li>À propos</li>
-						<li>Compétences</li>
-						<li>Contact</li>
+						<li>
+							<Link href="/">Accueil</Link>
+						</li>
+						<li>
+							<Link href="/a-propos">À propos</Link>
+						</li>
+						<li>
+							<Link href="/competences">Compétences</Link>
+						</li>
+						<li>
+							<Link href="/projets">Projets</Link>
+						</li>
 					</ul>
 				</nav>
 			</div>

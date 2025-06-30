@@ -63,8 +63,7 @@ const Introduction = () => {
 				je me suis tourné vers le <em>développement web</em> pendant mon <strong>Master</strong> en{" "}
 				<time>2023</time>. C&apos;est à ce moment-là que j&apos;ai appris à créer des sites web fluides et
 				réactifs, en utilisant des <strong>technologies modernes</strong> comme <mark>React</mark>,{" "}
-				<mark>Next.js</mark>
-				et <mark>Tailwind CSS</mark> (entre autres).
+				<mark>Next.js</mark> et <mark>Tailwind CSS</mark> (entre autres).
 				<br />
 				<br />
 				Malgré mon <strong>alternance</strong> très orientée <em>back-end</em> (notamment du{" "}
