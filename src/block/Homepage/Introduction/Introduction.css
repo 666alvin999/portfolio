@@ -1,0 +1,30 @@
+@reference "../../../app/globals.css";
+
+.introduction {
+    @apply text-white px-24 py-36 w-screen h-screen;
+
+    & > h2 {
+        @apply invisible text-white text-9xl tracking-wider font-bold mb-24;
+    }
+
+    & > p {
+        @apply invisible text-4xl font-light tracking-widest leading-paragraph;
+        hyphens: auto;
+
+        & > strong, mark {
+            @apply font-bold text-primary;
+        }
+
+        & > mark {
+            @apply bg-transparent;
+        }
+
+        & > em {
+            @apply font-medium text-white/80 not-italic;
+        }
+
+        & > time {
+            @apply font-semibold text-white/90;
+        }
+    }
+}
