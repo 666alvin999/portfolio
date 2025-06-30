@@ -46,7 +46,7 @@ export default [
 	{
 		rules: {
 			...prettier.rules,
-			'import/no-anonymous-default-export': 'off'
+			"import/no-anonymous-default-export": "off"
 		}
 	},
 	{
