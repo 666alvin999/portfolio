@@ -38,7 +38,7 @@ const Hero = () => {
 				ease: "none"
 			});
 
-			SplitText.create(".hero-content > h1, h2", {
+			SplitText.create(".hero-content > h1, p", {
 				type: "chars",
 				onSplit: (self) => {
 					gsap.from(self.chars, {
@@ -99,7 +99,7 @@ const Hero = () => {
 
 			<div className="hero-content">
 				<h1 className={bebasNeue.className}>Alvin Hamaïde</h1>
-				<h2>Développeur Java / NextJS Junior</h2>
+				<p>Développeur Java / NextJS Junior</p>
 			</div>
 		</section>
 	);

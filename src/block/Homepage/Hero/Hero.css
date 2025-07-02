@@ -22,7 +22,7 @@
 		@apply invisible absolute z-10 flex h-screen w-screen flex-col items-center justify-center;
 
 		& h1,
-		h2 {
+		p {
 			@apply text-white;
 		}
 
@@ -30,7 +30,7 @@
 			@apply text-8xl tracking-wider;
 		}
 
-		& h2 {
+		& p {
 			@apply text-4xl;
 		}
 	}

@@ -24,7 +24,8 @@ const Introduction = () => {
 				y: 50,
 				scrollTrigger: {
 					trigger: "h2",
-					start: "top 80%"
+					start: "top 80%",
+					toggleActions: "play none none reverse"
 				}
 			});
 
@@ -53,7 +54,7 @@ const Introduction = () => {
 
 	return (
 		<section className="introduction" ref={introductionRef}>
-			<h2 className={bebasNeue.className}>Introduction</h2>
+			<h2 className={`${bebasNeue.className} section-title`}>Introduction</h2>
 			<p>
 				Je m&apos;appelle <strong>Alvin Hamaïde</strong>, j&apos;ai <strong>23 ans</strong>, et je suis un{" "}
 				<em>développeur web junior</em>.
