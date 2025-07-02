@@ -92,7 +92,7 @@ const Hero = () => {
 	);
 
 	return (
-		<div className="hero-container" ref={heroRef}>
+		<section className="hero-container" ref={heroRef}>
 			<div className="hero-background">
 				<div ref={customCursorRef} className="custom-cursor"></div>
 			</div>
@@ -101,7 +101,7 @@ const Hero = () => {
 				<h1 className={bebasNeue.className}>Alvin Hamaïde</h1>
 				<h2>Développeur Java / NextJS Junior</h2>
 			</div>
-		</div>
+		</section>
 	);
 };
 

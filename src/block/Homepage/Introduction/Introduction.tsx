@@ -52,7 +52,7 @@ const Introduction = () => {
 	);
 
 	return (
-		<div className="introduction" ref={introductionRef}>
+		<section className="introduction" ref={introductionRef}>
 			<h2 className={bebasNeue.className}>Introduction</h2>
 			<p>
 				Je m&apos;appelle <strong>Alvin Hamaïde</strong>, j&apos;ai <strong>23 ans</strong>, et je suis un{" "}
@@ -73,7 +73,7 @@ const Introduction = () => {
 				<em>animations</em> que je n&apos;ai encore jamais faites, toujours avec l&apos;ambition de
 				m&apos;améliorer.
 			</p>
-		</div>
+		</section>
 	);
 };
 

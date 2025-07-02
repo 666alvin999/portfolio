@@ -1,10 +1,10 @@
 @reference "../../../app/globals.css";
 
 .introduction {
-	@apply h-screen w-screen px-24 py-36 text-white;
+	@apply h-fit min-h-screen w-screen px-24 py-36 text-white;
 
 	& > h2 {
-		@apply invisible mb-24 text-9xl font-bold tracking-wider text-white;
+		@apply invisible mb-10 text-9xl font-bold tracking-wider text-white;
 	}
 
 	& > p {
