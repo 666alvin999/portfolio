@@ -1,4 +1,5 @@
+import AnimatedBackground from "@/component/AnimatedBackground/AnimatedBackground";
 import SectionTitle from "@/component/SectionTitle/SectionTitle";
 import TextScroller from "@/component/TextScroller/TextScroller";
 
-export { SectionTitle, TextScroller };
+export { AnimatedBackground, SectionTitle, TextScroller };
