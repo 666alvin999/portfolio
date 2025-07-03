@@ -1,0 +1,35 @@
+@reference "../../app/globals.css";
+
+.header-container {
+	@apply fixed inset-x-0 top-16 z-10 flex h-12 items-center justify-center;
+
+	.header {
+		@apply flex h-full w-2xl items-center overflow-hidden rounded-full border border-gray-500;
+
+		transform: scaleY(0);
+
+		& > nav {
+			@apply h-full w-full;
+
+			& > ul {
+				@apply flex w-full items-center justify-between gap-8 text-white;
+
+				& > li {
+					@apply flex h-full w-full items-center justify-center;
+
+					& > a {
+						@apply h-full w-full rounded-full py-3 text-center;
+
+						transition-property: background-color, font-weight;
+						transition-duration: 0.3s;
+						transition-timing-function: ease-in-out;
+
+						&:hover {
+							@apply bg-white/20 font-bold;
+						}
+					}
+				}
+			}
+		}
+	}
+}

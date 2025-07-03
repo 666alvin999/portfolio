@@ -1,0 +1,5 @@
+@reference "../../../app/globals.css";
+
+#contact {
+    @apply flex h-fit min-h-screen w-screen flex-col items-center justify-center gap-12 px-24 text-white;
+}

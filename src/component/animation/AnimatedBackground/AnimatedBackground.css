@@ -1,0 +1,24 @@
+@reference "../../../app/globals.css";
+
+.background-container {
+	@apply relative z-0 h-screen w-screen text-white;
+
+	& > .background {
+		@apply absolute z-0 flex h-screen w-screen items-center justify-center bg-black;
+		mask-image: url("/homepage-hero-mask.webp");
+		mask-mode: luminance;
+		mask-size: cover;
+
+		& > .color {
+			@apply invisible absolute -z-10 h-[2400px] w-4xl;
+
+			transform: rotate(30deg);
+
+			background: linear-gradient(90deg, black 0%, var(--color-primary) 30%, var(--color-primary) 50%, black 80%);
+		}
+	}
+
+	& > .background-content {
+		@apply invisible absolute z-10 flex h-screen w-screen flex-col items-center justify-center;
+	}
+}

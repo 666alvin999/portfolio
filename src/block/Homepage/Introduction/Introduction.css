@@ -1,0 +1,30 @@
+@reference "../../../app/globals.css";
+
+#introduction {
+	@apply h-fit min-h-screen w-screen px-24 pt-36 text-white;
+
+	& > h2 {
+		@apply invisible mb-10;
+	}
+
+	p {
+		@apply leading-paragraph invisible text-4xl font-light tracking-widest;
+
+		& > strong,
+		mark {
+			@apply text-primary font-bold;
+		}
+
+		& > mark {
+			@apply bg-transparent;
+		}
+
+		& > em {
+			@apply font-medium text-white/80 not-italic;
+		}
+
+		& > time {
+			@apply font-semibold text-white/90;
+		}
+	}
+}

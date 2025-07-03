@@ -1,0 +1,13 @@
+@reference "../../../app/globals.css";
+
+.hero-container {
+	@apply relative z-0 h-screen w-screen text-white;
+
+	h1 {
+		@apply text-8xl tracking-wider;
+	}
+
+	p {
+		@apply text-4xl;
+	}
+}
