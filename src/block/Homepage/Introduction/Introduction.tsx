@@ -1,4 +1,4 @@
-import { SectionTitle, TextScroller } from "@/component/animation";
+import { Reveal, TextScroller } from "@/component/animation";
 import { bebasNeue } from "@/lib/fonts";
 
 import "./Introduction.css";
@@ -6,9 +6,9 @@ import "./Introduction.css";
 const Introduction = () => {
 	return (
 		<section id="introduction">
-			<SectionTitle trigger="#introduction">
+			<Reveal trigger="#introduction">
 				<h2 className={`${bebasNeue.className} section-title`}>Introduction</h2>
-			</SectionTitle>
+			</Reveal>
 			<TextScroller trigger="#introduction">
 				<p>
 					Je m&apos;appelle <strong>Alvin Hamaïde</strong>, j&apos;ai <strong>23 ans</strong>, et je suis un{" "}

@@ -11,12 +11,13 @@ type SectionTitleProps = {
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SectionTitle: FC<SectionTitleProps> = ({ trigger, children }) => {
+const Reveal: FC<SectionTitleProps> = ({ trigger, children }) => {
 	const containerRef = useRef(null);
 
 	useGSAP(() => {
 		gsap.set(`${trigger} .title-container > *`, {
-			autoAlpha: 1
+			autoAlpha: 1,
+			y: 0
 		});
 
 		gsap.from(`${trigger} .title-container > *`, {
@@ -30,10 +31,10 @@ const SectionTitle: FC<SectionTitleProps> = ({ trigger, children }) => {
 	});
 
 	return (
-		<div className="title-container" ref={containerRef}>
+		<div className="title-container h-fit" ref={containerRef}>
 			{children}
 		</div>
 	);
 };
 
-export default SectionTitle;
+export default Reveal;
