@@ -1,4 +1,4 @@
-@reference "../../app/globals.css";
+@reference "../../../app/globals.css";
 
 .background-container {
 	@apply relative z-0 h-screen w-screen text-white;

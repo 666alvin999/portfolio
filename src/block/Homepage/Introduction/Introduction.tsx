@@ -1,4 +1,4 @@
-import { SectionTitle, TextScroller } from "@/component";
+import { SectionTitle, TextScroller } from "@/component/animation";
 import { bebasNeue } from "@/lib/fonts";
 
 import "./Introduction.css";

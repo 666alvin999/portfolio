@@ -1,28 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-	--color-primary: #8100ff;
-	--leading-paragraph: 1.6;
+    --color-primary: #8100ff;
+    --leading-paragraph: 1.6;
 }
 
 @layer base {
-	* {
-		@apply m-0 p-0;
-	}
+    * {
+        @apply m-0 p-0;
+    }
 
-	body {
-		@apply h-screen w-screen bg-black;
-	}
+    body {
+        @apply h-screen w-screen bg-black;
+    }
 }
 
 @layer utilities {
-	.glassy {
-		background: rgba(122, 122, 122, 0.25);
-		backdrop-filter: blur(6px);
-		-webkit-backdrop-filter: blur(6px);
-	}
+    .glassy {
+        background: rgba(122, 122, 122, 0.25);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
 
-	.section-title {
-		@apply text-9xl font-bold! tracking-wider text-white;
-	}
+    .section-title {
+        @apply text-9xl font-bold! tracking-wider text-white;
+    }
+
+    .mandatory {
+        @apply text-red-600;
+    }
 }

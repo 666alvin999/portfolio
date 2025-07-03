@@ -15,17 +15,16 @@ const SectionTitle: FC<SectionTitleProps> = ({ trigger, children }) => {
 	const containerRef = useRef(null);
 
 	useGSAP(() => {
-		gsap.set(".title-container > *", {
+		gsap.set(`${trigger} .title-container > *`, {
 			autoAlpha: 1
 		});
 
-		gsap.from(".title-container > *", {
+		gsap.from(`${trigger} .title-container > *`, {
 			autoAlpha: 0,
 			y: 50,
 			scrollTrigger: {
 				trigger: trigger,
-				start: "top 80%",
-				toggleActions: "play none none reverse"
+				start: "top 50%"
 			}
 		});
 	});

@@ -1,4 +1,4 @@
-import { AnimatedBackground } from "@/component";
+import { AnimatedBackground } from "@/component/animation";
 import { bebasNeue } from "@/lib/fonts";
 
 import "./Hero.css";
