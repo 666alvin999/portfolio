@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 
 import { Introduction } from "@/block";
-import Contact from "@/block/Homepage/Contact/Contact";
 import Hero from "@/block/Homepage/Hero/Hero";
 
 export const metadata: Metadata = {
