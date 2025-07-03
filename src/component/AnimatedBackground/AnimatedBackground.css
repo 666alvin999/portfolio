@@ -5,7 +5,7 @@
 
 	& > .background {
 		@apply absolute z-0 flex h-screen w-screen items-center justify-center bg-black;
-		mask-image: url("/homepage-hero-mask.png");
+		mask-image: url("/homepage-hero-mask.webp");
 		mask-mode: luminance;
 		mask-size: cover;
 
