@@ -1,0 +1,26 @@
+@reference "../../../app/globals.css";
+
+.input-group {
+	@apply flex h-full w-full flex-col gap-2;
+
+	& > label {
+		@apply text-sm font-semibold text-white/70;
+	}
+
+	& > input,
+	textarea {
+		@apply w-full rounded-md border border-white p-4 text-lg;
+
+		&:focus {
+			@apply border-primary outline-none;
+		}
+	}
+
+	& > input {
+		@apply h-12;
+	}
+
+	textarea {
+		@apply h-full resize-none;
+	}
+}

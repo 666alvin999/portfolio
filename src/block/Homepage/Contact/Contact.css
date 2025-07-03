@@ -1,0 +1,9 @@
+@reference "../../../app/globals.css";
+
+#contact {
+	@apply flex min-h-screen w-screen flex-col items-center gap-12 px-24 py-36 text-white;
+
+	& > h2 {
+		@apply w-full;
+	}
+}

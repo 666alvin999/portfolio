@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-import { Introduction } from "@/block";
+import { Contact, Introduction } from "@/block";
 import Hero from "@/block/Homepage/Hero/Hero";
 
 export const metadata: Metadata = {
@@ -21,6 +21,7 @@ const Home = () => {
 		<main>
 			<Hero />
 			<Introduction />
+			<Contact />
 		</main>
 	);
 };

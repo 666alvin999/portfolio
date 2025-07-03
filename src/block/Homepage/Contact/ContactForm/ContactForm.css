@@ -1,0 +1,42 @@
+@reference "../../../../app/globals.css";
+
+form {
+	@apply flex h-96 w-full max-w-3xl flex-col items-center gap-4;
+
+	& > .form-container {
+		@apply flex h-96 w-full items-center gap-8;
+
+		& > div {
+			@apply flex h-full w-full flex-col items-stretch gap-4;
+
+			& > fieldset {
+				@apply flex h-fit w-full gap-4;
+			}
+
+			& > #company-fields {
+				@apply flex-col;
+			}
+		}
+	}
+
+	& > p {
+		@apply w-full;
+	}
+
+	& > button {
+		@apply bg-primary border-primary rounded-md border px-8 py-4 text-white;
+
+		transition-property:
+			background-color, border-right-color, border-left-color, border-bottom-color, border-top-color, color;
+		transition-duration: 100ms;
+		transition-timing-function: ease-in-out;
+
+		&:hover {
+			@apply border border-white text-white;
+
+			background: rgba(122, 122, 122, 0.25);
+			backdrop-filter: blur(6px);
+			-webkit-backdrop-filter: blur(6px);
+		}
+	}
+}
